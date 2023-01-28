@@ -4,6 +4,7 @@ curl -s https://raw.githubusercontent.com/Ff-c109/apt-syi/main/apt-syi.cpp > /op
 curl -s https://raw.githubusercontent.com/Ff-c109/apt-syi/main/apt-syi.sh > /bin/apt-syi &&\
 g++ /opt/apt-syi/apt-syi.cpp -o /opt/apt-syi/apt-syi &&\
 echo "bash <(curl -s https://raw.githubusercontent.com/Ff-c109/apt-syi/main/apt-syi_OTA.sh)" > /opt/apt-syi/ota.sh &&\
+chmod +x /opt/apt-syi/ota.sh &&\
 echo "done." &&\
 exit 0;
 
