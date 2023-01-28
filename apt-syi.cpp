@@ -24,7 +24,6 @@ void** install(bool fix_missing) {
 		strcpy( ((char*)(retv[1])), msg );
 	};
 
-	system("apt clean");
 	string command_download = "apt install --download-only";
 	command_download += pkg_list;
 	auto d_retv = system(command_download.c_str());
@@ -83,7 +82,7 @@ void** fixbroken(bool force, char** argv) {
 
 int main(int argc, char** argv) {
 	if(argc == 1) {
-		cout << "apt-syi [--fix-missing] [pkg0] [pkg1] [pkg2] ..." << "\r\n"
+		cout << "apt-syi [--local] [--fix-missing] [pkg0] [pkg1] [pkg2] ..." << "\r\n"
 			<< "Install pkgs which is already downloaded: " << "\r\n"
 			<< "      apt-syi --continue" << "\r\n"
 			<< "Force Install downloaded pkgs: " << "\r\n"
@@ -153,7 +152,15 @@ int main(int argc, char** argv) {
 		}
 	}
 
-	for(int i = (strcmp(argv[1], "--fix-missing") == 0 ? 2 : 1); i < argc; i++) { pkg_list += " "; pkg_list += argv[i]; }
+	system("apt clean");
+	int i = strcmp(argv[1], "--local") == 0 ? 1 : 0;
+	for(i += (strcmp(argv[2], "--fix-missing") == 0 ? 2 : 1); i < argc; i++) { pkg_list += " "; pkg_list += argv[i]; }
+	if(strcmp(argv[1], "--local") == 0) {
+		string copy_cmd = "cp -v ";
+		copy_cmd += pkg_list;
+		copy_cmd += " /var/cache/apt/archives/";
+		system(copy_cmd.c_str());
+	}
 	bool dsync_retv = data_sync();
 	auto install_retv = install(strcmp(argv[1], "--fix-missing") == 0 ? true : false);
 	if(*((bool*)(install_retv[0]))) {
