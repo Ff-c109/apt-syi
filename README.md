@@ -1,7 +1,7 @@
 # apt-syi
 Quickly complete apt installation or repair
 
-apt-syi means apt sync(update) then install 
+apt-syi means apt sync(update) then install  
 It can keep your pkg list newest.
 
 sometimes apt install is not avaliable in chroot container which is cross platform,
