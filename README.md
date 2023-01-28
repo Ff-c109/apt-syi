@@ -25,7 +25,7 @@ sudo su -c "bash -c '. <(curl -s https://raw.githubusercontent.com/Ff-c109/apt-s
 ## Using Proprietary Server (Highly Recommend)
 This way is the simplest and fastest. But you may need IPv6 network to access it.  
 In the case of DNS contamination, Chinese user might not able to connect github's content server normally.
-In that situation, Proprietary Server might be helpfull.  
+In that situation, Proprietary Server might be helpful.  
 Any way, Try this one first.
 
 ```bash
