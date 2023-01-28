@@ -154,7 +154,7 @@ int main(int argc, char** argv) {
 
 	system("apt clean");
 	int i = strcmp(argv[1], "--local") == 0 ? 1 : 0;
-	for(i += (strcmp(argv[2], "--fix-missing") == 0 ? 2 : 1); i < argc; i++) { pkg_list += " "; pkg_list += argv[i]; }
+	for(i += (argc >= 3 ? (strcmp(argv[2], "--fix-missing") == 0 ? 2 : 1) : 1); i < argc; i++) { pkg_list += " "; pkg_list += argv[i]; }
 	if(strcmp(argv[1], "--local") == 0) {
 		string copy_cmd = "cp -v ";
 		copy_cmd += pkg_list;
