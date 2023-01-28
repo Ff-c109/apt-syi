@@ -13,8 +13,8 @@ Just clone this repository, and cd in to repository root, run apt-syi_installer.
 # Online Install
 
 ## Using GitHub
-If you are sure that you have a stable Internet connection, it is recommended to use the following instructions to install
-**In the case of DNS contamination, Chinese user might not able to connect github's content server normally. Try ![Proprietary Server](#l0)**
+If you are sure that you have a stable Internet connection, it is recommended to use the following instructions to install  
+**In the case of DNS contamination, Chinese user might not able to connect github's content server normally. Try [Proprietary Server](#l0)**
 
 ```bash
 sudo su -c "bash -c '. <(curl -s https://raw.githubusercontent.com/Ff-c109/apt-syi/main/apt-syi_installer-online.sh)'"
