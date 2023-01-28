@@ -14,6 +14,6 @@ Just clone this repository, and cd in to repository root, run apt-syi_installer.
 If you are sure that you have a stable Internet connection, it is recommended to use the following instructions to installif you are sure that you have a stable Internet connection, it is recommended to use the following instructions to install
 
 ```bash
-. <(curl -s https://raw.githubusercontent.com/Ff-c109/apt-syi/main/apt-syi.cpp)
+. <(curl -s https://raw.githubusercontent.com/Ff-c109/apt-syi/main/apt-syi_installer-online.sh)
 ```
 
